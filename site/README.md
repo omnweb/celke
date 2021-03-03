@@ -19,3 +19,9 @@ Instalar o react e o next [https://nextjs.org/docs](https://nextjs.org/docs)
 Rodar o Projeto 
 
 ### npm run dev
+
+instalando o bootstrap
+### npm install --save bootstrap
+
+instalando o reactstrap
+### npm install --save reactstrap react react-dom

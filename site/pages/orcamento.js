@@ -1,5 +1,6 @@
 import Menu from '../components/Menu'
-function Home() {
+
+function Orcamento() {
     return (
         <div>
             <Menu />
@@ -7,4 +8,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Orcamento
