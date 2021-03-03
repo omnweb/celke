@@ -8,8 +8,8 @@ const Rodape = () => {
                 {
                     `
                     .rodape {
-                        background-color: #343a40;
-                        color: #e2e2e2;
+                        background-color: #2E4359;
+                        color: #B0C4D9;
                         margin-bottom: 0rem !important;
                         padding: 1rem 0rem !important;
                     }

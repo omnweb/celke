@@ -11,17 +11,17 @@ function Home() {
                 <style>
                     {
                         `.descr-top{
-                            background-color: #000000;
-                            color: #ccc;
+                            background-color: #B0C4D9;
+                            color: #2E4359;
                             margin-bottom: 0rem !important;
                             padding: 1rem 0rem;
                         }
                         .circulo{
                             width:140px;
                             height:140px;
-                            background-color: #343a40;
+                            background-color: #B0C4D9;
                             font-size:3rem;
-                            color: #e2e2e2;;
+                            color: #2E4359;;
                             padding:24px;
                         }
                         .centralizar{
@@ -36,7 +36,7 @@ function Home() {
                     <h1 className="display-4">Temos a solução que sua empresa precisa.</h1>
                     <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
                     <p className="lead">
-                        <a href="/orcamento" className="btn btn-outline-primary btn-lg mt-4">Orçamento</a>
+                        <a href="/orcamento" className="btn btn-outline-dark btn-lg mt-4">Orçamento</a>
                     </p>
                 </Container>
             </Jumbotron>
@@ -45,7 +45,8 @@ function Home() {
                 <style>
                     {
                         `.servicos{
-                            color: #575759;
+                            background-color: #486A8C;
+                            color: #B0C4D9;
                             margin-bottom: 0 !important;
                         }`
                     }

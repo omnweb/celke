@@ -17,7 +17,14 @@ const Menu = (props) => {
     return (
         <div>
             <div>
-                <Navbar color="dark" dark expand="md">
+                <style>
+                    {`
+                        .menu-custom{
+                            background-color: #2E4359;
+                        }
+                    `}
+                </style>
+                <Navbar className="menu-custom" dark expand="md">
                     <Container>
                         <NavbarBrand href="/">Celke</NavbarBrand>
                         <NavbarToggler onClick={toggle} />
