@@ -3,32 +3,25 @@ import Rodape from '../components/Footer'
 import React from 'react';
 import { Jumbotron, Container } from 'reactstrap';
 
+import Head from 'next/head';
+
 function Home() {
     return (
         <div>
+            <Head>
+                <title>Home | Celke</title>
+                <link rel="shortcut icon" href="favicon.png" />
+            </Head>
             <Menu />
             <Jumbotron fluid className="descr-top">
                 <style>
                     {
                         `.descr-top{
-                            background-color: #B0C4D9;
+                            background-color: #f2f2f2;
                             color: #2E4359;
                             margin-bottom: 0rem !important;
                             padding: 1rem 0rem;
-                        }
-                        .circulo{
-                            width:140px;
-                            height:140px;
-                            background-color: #B0C4D9;
-                            font-size:3rem;
-                            color: #2E4359;;
-                            padding:24px;
-                        }
-                        .centralizar{
-                            margin: 0 auto !important;
-                            float: none !important;
-                        }
-                        
+                        }                        
                         `
                     }
                 </style>
@@ -48,7 +41,21 @@ function Home() {
                             background-color: #486A8C;
                             color: #B0C4D9;
                             margin-bottom: 0 !important;
-                        }`
+                        }
+                        .circulo{
+                            width:140px;
+                            height:140px;
+                            background-color: #B0C4D9;
+                            font-size:3rem;
+                            color: #2E4359;;
+                            padding:24px;
+                        }
+                        .centralizar{
+                            margin: 0 auto !important;
+                            float: none !important;
+                        }
+                        `
+
                     }
                 </style>
                 <Container className="text-center" >
