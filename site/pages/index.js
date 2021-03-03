@@ -1,4 +1,5 @@
 import Menu from '../components/Menu'
+import Rodape from '../components/Footer'
 import React from 'react';
 import { Jumbotron, Container } from 'reactstrap';
 
@@ -12,14 +13,15 @@ function Home() {
                         `.descr-top{
                             background-color: #000000;
                             color: #ccc;
-                            margin-bottom: 0 !important;
+                            margin-bottom: 0rem !important;
+                            padding: 1rem 0rem;
                         }
                         .circulo{
                             width:140px;
                             height:140px;
                             background-color: #343a40;
                             font-size:3rem;
-                            color: #ccc;
+                            color: #e2e2e2;;
                             padding:24px;
                         }
                         .centralizar{
@@ -93,7 +95,7 @@ function Home() {
                     </div>
                 </Container>
             </Jumbotron>
-
+            <Rodape />
         </div>
     )
 }
