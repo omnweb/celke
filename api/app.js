@@ -2,8 +2,13 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
 
+app.use(express.json())
+
 require('./models/home')
 const Home = mongoose.model('Home')
+
+require('./models/orcamento')
+const Orcamento = mongoose.model('Orcamento')
 
 mongoose.connect('mongodb://localhost:27017/celke', {
     useNewUrlParser: true,
@@ -66,6 +71,21 @@ app.post('/home', async (req, res) => {
     return res.json({
         error: false,
         message: "Conteúdo da página Home cadastrado com sucesso"
+    })
+
+})
+
+app.post('/orcamento', async (req, res) => {
+
+    await Orcamento.create(req.body, (err) => {
+        if (err) return res.status(400).json({
+            error: true,
+            message: "Erro ao enviar solicitação de Orcamento"
+        })
+    })
+    return res.json({
+        error: false,
+        message: "Solicitação de Orçamento enviada com sucesso"
     })
 
 })

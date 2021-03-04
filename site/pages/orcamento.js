@@ -62,8 +62,8 @@ function Orcamento() {
                         </FormGroup>
 
                         <FormGroup>
-                            <Label for="whatapp">Whatapp</Label>
-                            <Input type="tel" name="whatapp" id="whatapp" placeholder="(xx) xxxxx-xxxx" />
+                            <Label for="whatsapp">Whatsapp</Label>
+                            <Input type="tel" name="whatsapp" id="whatsapp" placeholder="(xx) xxxxx-xxxx" />
                         </FormGroup>
 
                         <FormGroup>
