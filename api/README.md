@@ -25,3 +25,6 @@ Com o MongoDB instalado na máquina, instála-se então no projeto
 
 Mongoose traduz os dados do banco de dados para objetos javascript
 ### npm install mongoose --save
+
+Permitir acesso externo a API
+### npm install cors --save
