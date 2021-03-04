@@ -25,3 +25,9 @@ instalando o bootstrap
 
 instalando o reactstrap
 ### npm install --save reactstrap react react-dom
+
+
+Instalando dependências do font awesome
+###  npm i --save @fortawesome/fontawesome-svg-core
+###  npm install --save @fortawesome/free-solid-svg-icons
+###  npm install --save @fortawesome/react-fontawesome

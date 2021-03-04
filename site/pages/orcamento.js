@@ -10,7 +10,10 @@ function Orcamento() {
         <div>
             <Menu />
             <Head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Orçamento </title>
+                <meta name="description" content="Página de Orçamento" />
             </Head>
             <Jumbotron fluid className="descr-top">
                 <style>

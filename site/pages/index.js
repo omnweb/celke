@@ -2,6 +2,12 @@ import Menu from '../components/Menu'
 import Rodape from '../components/Footer'
 import React from 'react';
 import { Jumbotron, Container } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas);
+
+
 
 import Head from 'next/head';
 
@@ -9,7 +15,10 @@ function Home() {
     return (
         <div>
             <Head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Home | Celke</title>
+                <meta name="description" content="Site desenvolvido na semana de Imersão React da Celke" />
                 <link rel="shortcut icon" href="favicon.png" />
             </Head>
             <Menu />
@@ -72,7 +81,7 @@ function Home() {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="rounded-circle circulo centralizar">
-                                A
+                                <FontAwesomeIcon icon="cogs" />
                             </div>
                             <h2 className="mt-4 mb-4"> Serviço 1</h2>
                             <p className="text-center">
@@ -82,7 +91,7 @@ function Home() {
                         </div>
                         <div className="col-md-4">
                             <div className="rounded-circle circulo centralizar">
-                                B
+                                <FontAwesomeIcon icon="code" />
                             </div>
                             <h2 className="mt-4 mb-4"> Serviço 2</h2>
                             <p className="text-center">
@@ -92,7 +101,7 @@ function Home() {
                         </div>
                         <div className="col-md-4">
                             <div className="rounded-circle circulo centralizar">
-                                C
+                                <FontAwesomeIcon icon="network-wired" />
                             </div>
                             <h2 className="mt-4 mb-4"> Serviço 3</h2>
                             <p className="text-center">
