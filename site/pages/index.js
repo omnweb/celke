@@ -11,7 +11,7 @@ library.add(fas);
 
 import Head from 'next/head';
 
-function Home() {
+function Home({ data }) {
     return (
         <div>
             <Head>
@@ -35,10 +35,10 @@ function Home() {
                     }
                 </style>
                 <Container className="text-center" >
-                    <h1 className="display-4">Temos a solução que sua empresa precisa.</h1>
-                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <h1 className="display-4">{data.home.topTitulo}</h1>
+                    <p className="lead">{data.home.topSubtitulo}</p>
                     <p className="lead">
-                        <a href="/orcamento" className="btn btn-outline-dark btn-lg mt-4">Orçamento</a>
+                        <a href={data.home.topLinkBtn} className="btn btn-outline-dark btn-lg mt-4">{data.home.topTextoBtn}</a>
                     </p>
                 </Container>
             </Jumbotron>
@@ -69,45 +69,30 @@ function Home() {
                 </style>
                 <Container className="text-center" >
                     <div>
-                        <h2 className="display-4 mb-4">Serviços</h2>
-                        <p className="lead pb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu est mattis, ornare felis eu,
-                            fermentum ipsum. Suspendisse mollis diam a est pellentesque imperdiet sit amet et ligula. Donec
-                            volutpat est urna, pellentesque bibendum mi dapibus ac. Nullam a egestas justo. Sed porttitor
-                            tortor mattis, aliquet sem et, congue arcu. Cras nec est vel nunc sagittis tristique.
-                            Etiam bibendum fermentum suscipit.
-                        </p>
+                        <h2 className="display-4 mb-4">{data.home.serTitulo}</h2>
+                        <p className="lead pb-4">{data.home.serSubtitulo} </p>
                     </div>
                     <div className="row">
                         <div className="col-md-4">
                             <div className="rounded-circle circulo centralizar">
-                                <FontAwesomeIcon icon="cogs" />
+                                <FontAwesomeIcon icon={data.home.serUmIcone} />
                             </div>
-                            <h2 className="mt-4 mb-4"> Serviço 1</h2>
-                            <p className="text-center">
-                                Donec eu est mattis, ornare felis eu, fermentum ipsum. Suspendisse mollis diam a est pellentesque
-                                imperdiet sit amet et ligula
-                            </p>
+                            <h2 className="mt-4 mb-4">{data.home.serUmTitulo}</h2>
+                            <p className="text-center">{data.home.serUmDesc}</p>
                         </div>
                         <div className="col-md-4">
                             <div className="rounded-circle circulo centralizar">
-                                <FontAwesomeIcon icon="code" />
+                                <FontAwesomeIcon icon={data.home.serDoisIcone} />
                             </div>
-                            <h2 className="mt-4 mb-4"> Serviço 2</h2>
-                            <p className="text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu est mattis, ornare felis eu,
-                                fermentum ipsum. Suspendisse
-                            </p>
+                            <h2 className="mt-4 mb-4">{data.home.serDoisTitulo}</h2>
+                            <p className="text-center">{data.home.serDoisDesc}</p>
                         </div>
                         <div className="col-md-4">
                             <div className="rounded-circle circulo centralizar">
-                                <FontAwesomeIcon icon="network-wired" />
+                                <FontAwesomeIcon icon={data.home.serTresIcone} />
                             </div>
-                            <h2 className="mt-4 mb-4"> Serviço 3</h2>
-                            <p className="text-center">
-                                fermentum ipsum. Suspendisse mollis diam a est pellentesque imperdiet sit amet et ligula.
-                                Lorem ipsum dolor sit amet
-                            </p>
+                            <h2 className="mt-4 mb-4">{data.home.serTresTitulo}</h2>
+                            <p className="text-center">{data.home.serTresDesc}</p>
                         </div>
                     </div>
                 </Container>
@@ -116,5 +101,14 @@ function Home() {
         </div>
     )
 }
+
+export async function getServerSideProps() {
+    const res = await fetch(`http://localhost:3001/home`)
+    const data = await res.json()
+
+    return { props: { data } }
+}
+
+
 
 export default Home
