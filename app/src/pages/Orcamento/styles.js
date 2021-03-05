@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
 flex: 1;
@@ -32,4 +32,15 @@ width:100%;
 color: #B0C4D9;
 text-align:center;
 font-size:18px;
+`
+
+export const LoadingArea = styled.View`
+position: absolute;
+top: 0;
+right: 0;
+bottom:0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.6);
+justify-content: center;
+align-items: center;
 `

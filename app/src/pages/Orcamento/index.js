@@ -1,19 +1,34 @@
 import React, { useState } from 'react'
-import { Alert } from 'react-native'
+import { ActivityIndicator, Alert } from 'react-native';
 
-import { Container, TitleInput, InputForm, BtnSubmitForm, TxtSubmitForm } from './styles'
-import { ScrollView } from 'react-native-gesture-handler'
+import { Container, TitleInput, InputForm, BtnSubmitForm, TxtSubmitForm, LoadingArea } from './styles';
+import { ScrollView } from 'react-native-gesture-handler';
+
+import api from '../../config/api';
 
 export default function Orcamento() {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
-    const [whatsApp, setWhatsApp] = useState('')
+    const [whatsapp, setWhatsApp] = useState('')
     const [project, setProject] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const addOrcamento = async () => {
-        Alert.alert(`${name} - ${email} `)
+        setLoading(true)
+        await api.post('/orcamento', { name, email, phone, whatsapp, project }).then(response => {
+            Alert.alert("", response.data.message)
+            setLoading(false)
+        }).catch(err => {
+            if (err.response) {
+                Alert.alert("", err.response.data.message);
+                setLoading(false)
+            } else {
+                Alert.alert("", "Erro de conexão com a API")
+                setLoading(false)
+            }
+        })
     }
 
     return (
@@ -30,9 +45,9 @@ export default function Orcamento() {
                 <InputForm
                     placeholder="Digite seu email"
                     autoCorrect={false}
-                    value={email}
                     keyboardType="email-address"
                     autoCapitalize="none"
+                    value={email}
                     onChangeText={text => setEmail(text)}
                 />
                 <TitleInput>Telefone</TitleInput>
@@ -40,14 +55,13 @@ export default function Orcamento() {
                     placeholder="(xx) xxxx-xxxx"
                     autoCorrect={false}
                     value={phone}
-                    keyboardType="integer"
                     onChangeText={text => setPhone(text)}
                 />
                 <TitleInput>WhatsApp</TitleInput>
                 <InputForm
                     placeholder="(xx) xxxxx-xxxx"
                     autoCorrect={false}
-                    value={whatsApp}
+                    value={whatsapp}
                     onChangeText={text => setWhatsApp(text)}
                 />
                 <TitleInput>Projeto</TitleInput>
@@ -57,13 +71,19 @@ export default function Orcamento() {
                     value={project}
                     onChangeText={text => setProject(text)}
                 />
-                <BtnSubmitForm onPress={addOrcamento} >
+                <BtnSubmitForm
+                    disabled={loading}
+                    onPress={addOrcamento}
+                >
                     <TxtSubmitForm>
                         Cadastrar
                 </TxtSubmitForm>
                 </BtnSubmitForm>
-
+                {loading &&
+                    <LoadingArea>
+                        <ActivityIndicator size="large" color="#B0C4D9" />
+                    </LoadingArea>}
             </Container>
         </ScrollView>
-    )
+    );
 }

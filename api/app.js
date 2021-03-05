@@ -87,6 +87,12 @@ app.post('/home', async (req, res) => {
 
 app.post('/orcamento', async (req, res) => {
 
+    // await sleep(2000)
+    // function sleep(ms) {
+    //     return new mongoose.Promise((resolve) => {
+    //         setTimeout(resolve, ms)
+    //     })
+    // }
     await Orcamento.create(req.body, (err) => {
         if (err) return res.status(400).json({
             error: true,

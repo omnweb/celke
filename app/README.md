@@ -28,4 +28,8 @@ Transforma CSS em Componente
 ### npm install --save styled-components
 
 
+Realiza requisições na API
+### npm install --save axios
+
+
 

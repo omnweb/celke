@@ -4,7 +4,6 @@ import { Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Orcamento from './pages/Orcamento'
-
 const Stack = createStackNavigator();
 
 
@@ -23,10 +22,9 @@ export default function Routes() {
                     name="Orcamento"
                     component={Orcamento}
                     options={{
-                        headerTitle: 'Orçamento'
-                    }}
-                />
+                        headerTitle: "Orçamento"
+                    }} />
             </Stack.Navigator>
         </NavigationContainer>
-    )
+    );
 }
